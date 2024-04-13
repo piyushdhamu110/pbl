@@ -38,7 +38,7 @@ const Login = ({ isLogin, setIsLogin }) => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:3000/loginseller", {
+      const result = await axios.post("https://lcm-backend.onrender.com/loginseller", {
         username,
         password,
       });
@@ -115,7 +115,7 @@ const Register = ({ isLogin, setIsLogin }) => {
     event.preventDefault();
 
     try {
-      await axios.post("http://localhost:3000/signupseller", {
+      await axios.post("https://lcm-backend.onrender.com/signupseller", {
         username,
         password,
       });

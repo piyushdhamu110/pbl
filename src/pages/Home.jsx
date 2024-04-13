@@ -11,7 +11,7 @@ const Home = () => {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/products");
+      const response = await axios.get("https://lcm-backend.onrender.com/products");
       console.log(response.data.slice(0, 5));
       setProducts(response.data.slice(0, 9));
     } catch (error) {
