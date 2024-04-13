@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Carousel from "./Carousel";
+import { TbMessageChatbot } from "react-icons/tb";
 
 const Home = () => {
   const [showChatbot, setShowChatbot] = useState(false);
@@ -73,15 +74,15 @@ const Home = () => {
           </div>
         </div>
         {/* Display GetProductsByLocation component */}
-
-        <div className="App">
+        
+        <div className="App fixed right-3">
           {/* Button to toggle chatbot visibility */}
           <button onClick={() => setShowChatbot(!showChatbot)}>
-            {showChatbot ? "Hide Chatbot" : "Show Chatbot"}
+            <TbMessageChatbot className="text-[4rem] text-orange-400"/>
           </button>
 
           {/* Conditionally render the chatbot based on state */}
-          {showChatbot && (
+          {!showChatbot && (
             <iframe
               width="350"
               height="430"
