@@ -21,14 +21,10 @@ function SingleProduct() {
           useEffect(() => {getProducts()},[])
                      
   return (
-    <div>
-          <h1>{product.name}</h1>
-          <img src={product.image} alt="" />
-          <p>{product.description}</p>
-          <p>{product.price}</p>
-          <p>{product.category}</p>
-          <p>{product.type}</p>
-    </div>
+          <>
+          <div className="w-[99vw] h-[10vh]"></div>
+          <div></div>
+          </>
   )
 }
 
