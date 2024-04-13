@@ -3,14 +3,20 @@ import img from "../../assets/SideImage.png";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from "@chakra-ui/react";
 
 const SellerSignUp = () => {
   const [isLogin, setIsLogin] = useState(true);
   return (
     <>
       <div className="w-screen flex flex-col items-center">
-        <div className="w-screen h-[10vh]"></div>
-        <div className="w-[80vw] flex justify-between">
+        <div className="w-screen h-[14vh]"></div>
+        <div className="w-[80vw] flex justify-between p-3 bg-white rounded-2xl">
           <img src={img} alt="" className="w-[40rem]" />
           <div className="auth w-[50%] flex justify-center items-center">
             {isLogin ? (
@@ -61,7 +67,9 @@ const Login = ({ isLogin, setIsLogin }) => {
         onSubmit={handleSubmit}
         className="flex flex-col gap-10 w-[100%] items-center"
       >
-        <h2 className="text-black text-center text-[2rem]">Login as a Seller</h2>
+        <h2 className="text-black text-center text-[2rem]">
+          Login as a Seller
+        </h2>
         <div className="form-group flex gap-2 justify-center w-[100%]">
           <input
             type="text"
@@ -82,7 +90,10 @@ const Login = ({ isLogin, setIsLogin }) => {
             placeholder="Password"
           />
         </div>
-        <button type="submit" className="w-[50%] p-2 bg-blue-400 rounded-2xl text-[20px]">
+        <button
+          type="submit"
+          className="bg-black w-[50%] p-3 rounded-3xl hover:bg-slate-700 text-white"
+        >
           Login
         </button>
         <p className="text-black">
@@ -113,7 +124,6 @@ const Register = ({ isLogin, setIsLogin }) => {
         username,
         password,
       });
-      alert("Registration Completed! Now login.");
     } catch (err) {
       console.error(err);
     }
@@ -151,8 +161,11 @@ const Register = ({ isLogin, setIsLogin }) => {
             placeholder="Password"
           />
         </div>
-        <button type="submit" className="p-2 bg-blue-400 rounded-2xl w-[50%]">
-          Create Account
+        <button
+          type="submit"
+          className="bg-black w-[50%] p-3 rounded-3xl hover:bg-slate-700 text-white"
+        >
+          Register
         </button>
         {!isLogin && (
           <p className="text-black">
