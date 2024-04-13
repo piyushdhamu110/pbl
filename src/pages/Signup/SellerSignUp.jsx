@@ -4,6 +4,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
+
 const SellerSignUp = () => {
   const [isLogin, setIsLogin] = useState(true);
   return (
