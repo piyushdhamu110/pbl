@@ -52,7 +52,7 @@ function SingleProduct() {
 
   const checkout = async () => {
       try {
-          const res = await fetch('http://localhost:3000/checkout', {
+          const res = await fetch('https://lcm-backend.onrender.com/checkout', {
               method: "POST",
               headers: {
                   "Content-Type": "application/json",
@@ -159,9 +159,11 @@ function SingleProduct() {
                               <p className="text-[20px] text-green-600 pt-4">In Stock</p>
                               <p>ships from Amazon</p>
                               <p>Sold by Someone</p>
-                              <button onClick={decrement}>-</button>
+                              <div className="flex gap-3"><p>Quantity</p>
+                              <div className="flex gap-2"><button onClick={decrement}>-</button>
                               <p>{quantity}</p>
-                              <button onClick={increment}>+</button>
+                              <button onClick={increment}>+</button></div>
+                              </div>
                               <button className="p-3 bg-black text-white rounded-3xl">Add to Cart</button>
                               <button className="p-3 bg-black text-white rounded-3xl" onClick={checkout}>Buy Now</button>
                     </div>
