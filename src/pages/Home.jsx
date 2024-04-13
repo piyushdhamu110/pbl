@@ -23,26 +23,26 @@ const Home = () => {
 
   return (
     <>
-      <div className="w-full h-[10vh]"></div>
+      <div className="w-full h-[10vh] pb-5"></div>
       <div className="w-full flex flex-col items-center p-3 gap-2">
-        <div className="w-full h-[50vh] bg-white">
+        <div className="w-[90%] p-3 bg-white rounded-lg">
           <Carousel />
         </div>
         <div className="w-full pt-4 flex flex-col items-center gap-3 rounded-md">
-          <div className="w-full">
+          <div className="w-[90%]">
             <h1 className="text-black text-3xl">Trending Products</h1>
           </div>
-          <div className="w-full p-3 flex flex-wrap gap-4 justify-center">
+          <div className="w-[100%] p-3 flex flex-wrap gap-4 justify-center">
             {products.map((item) => {
               return (
                 <div
-                  className="w-72 p-2 bg-white rounded-xl hover:shadow-xl hover:scale-[1] cursor-pointer"
+                  className="w-72 p-2 bg-white rounded-xl hover:shadow-xl hover:scale-[1] cursor-pointer flex flex-col items-center"
                   key={item._id}
                 >
                   <img
                     src={item.image}
                     alt=""
-                    className="w-full h-36 object-cover rounded-t-xl"
+                    className="w-[10rem] h-[10rem] object-cover rounded-t-xl"
                   />
                   <div className="p-3">
                     <p className="text-lg">{item.name.slice(0, 25)}</p>

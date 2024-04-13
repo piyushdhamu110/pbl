@@ -31,26 +31,26 @@ const Carousel = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 rounded-md overflow-hidden shadow-lg">
-      <div className="relative">
-        <button
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 text-gray-500 hover:text-gray-900 focus:outline-none"
+    <div className=" w-[100%]  mx-auto  rounded-md overflow-hidden flex items-center justify-center">
+      <button
+          className=""
           onClick={prevPerson}
         >
           <FaChevronLeft className="w-6 h-6" />
         </button>
-        <button
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 text-gray-500 hover:text-gray-900 focus:outline-none"
+      
+      <div className="p-4 w-[70%]">
+        <p className="mt-2 text-lg text-gray-600">"{text}"</p>
+      </div>
+      <div className="relative">
+        <img src={image} alt={name} className="w-[50rem] p-3 rounded-3xl" />
+      </div>
+      <button
+          className=""
           onClick={nextPerson}
         >
           <FaChevronRight className="w-6 h-6" />
         </button>
-        <img src={image} alt={name} className="w-full h-auto" />
-      </div>
-      <div className="p-4">
-        <p className="text-lg font-semibold text-gray-800">{name}</p>
-        <p className="mt-2 text-sm text-gray-600">{text}</p>
-      </div>
     </div>
   );
 };

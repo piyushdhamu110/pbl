@@ -27,9 +27,9 @@ const Navbar = () => {
               <NavLink to="/contact" className="text-black text-[20px] md:text-[16px]">
                 Contact
               </NavLink>
-              <NavLink to="about" className="text-black text-[20px] md:text-[16px]">
+              {/* <NavLink to="about" className="text-black text-[20px] md:text-[16px]">
                 About
-              </NavLink>
+              </NavLink> */}
               {!cookies.access_token ? (
                 <NavLink to="/signup" className="text-black text-[20px] md:text-[16px]">
                   Sign Up
