@@ -4,7 +4,7 @@ const reviews = [
       name: 'susan smith',
       job: 'web developer',
       image:
-        'https://images.pexels.com/photos/5632382/pexels-photo-5632382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        'https://images.pexels.com/photos/4968390/pexels-photo-4968390.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       text:
         "Revolutionize your local shopping experience with our community marketplace, where AI chatbots provide instant assistance.",
         class1:"img1",
@@ -14,7 +14,7 @@ const reviews = [
       name: 'anna johnson',
       job: 'web designer',
       image:
-        'https://images.pexels.com/photos/2448523/pexels-photo-2448523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       text:
         ' Plus, enjoy tailored recommendations with our personalized product recommendation system, making every purchase a delight',
         class1:"img1",
