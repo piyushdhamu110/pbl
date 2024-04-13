@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Carousel from "./Carousel";
-import GetProductsByLocation from "./GetProductsByLocation"; // Import the GetProductsByLocation component
 
 const Home = () => {
+  const [showChatbot, setShowChatbot] = useState(false);
+
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -72,7 +73,24 @@ const Home = () => {
           </div>
         </div>
         {/* Display GetProductsByLocation component */}
-      
+
+        <div className="App">
+          {/* Button to toggle chatbot visibility */}
+          <button onClick={() => setShowChatbot(!showChatbot)}>
+            {showChatbot ? "Hide Chatbot" : "Show Chatbot"}
+          </button>
+
+          {/* Conditionally render the chatbot based on state */}
+          {showChatbot && (
+            <iframe
+              width="350"
+              height="430"
+              allow="microphone;"
+              src="https://console.dialogflow.com/api-client/demo/embedded/d528eb87-85a1-469e-8cd7-760f692f3bf4"
+              title="Dialogflow Chatbot"
+            ></iframe>
+          )}
+        </div>
       </div>
     </>
   );
