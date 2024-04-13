@@ -46,7 +46,7 @@ const Login = ({ isLogin, setIsLogin }) => {
       window.localStorage.setItem("userID", result.data.userID);
       window.localStorage.setItem("userType", result.data.userType);
 
-      navigate("/addproduct");
+      navigate("/seller/create-product");
 
       console.log(result.data.token);
       console.log(result);
