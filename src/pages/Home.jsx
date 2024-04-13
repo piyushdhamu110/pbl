@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import img from '../assets/SideImage.png'
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -39,6 +40,7 @@ const Home = () => {
                                                             <p className="text-[15px]">Price: Rs. <span className="font-semibold">{item.price}</span></p>
                                                             <p className="text-[15px]">category: <span className="font-semibold">{item.category}</span></p>
                                                             <p className="text-[15px]">Type: <span className="font-semibold">{item.type}</span></p>
+                                                            <Link to={`${item._id}`}>Read More..</Link>
                                                             </div>
 
                                                             </div>

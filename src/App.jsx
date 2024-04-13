@@ -10,6 +10,7 @@ import SellerSignUp from './pages/Signup/SellerSignUp';
 import Signup from './pages/Signup/Signup';
 import CreateProduct from './pages/Seller/CreateProduct';
 import PreviewProduct from './pages/Seller/PreviewProduct';
+import SingleProduct from './pages/SingleProduct';
 
 function App() {
   
@@ -27,6 +28,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/seller/create-product' element={<CreateProduct />} />
           <Route path='/seller/preview-product' element={<PreviewProduct />} />
+          <Route path='/:productId' element={<SingleProduct />} />
         </Routes>
         <Footer />
       </Router>
