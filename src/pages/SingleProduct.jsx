@@ -11,6 +11,9 @@ import { FaLocationDot } from "react-icons/fa6";
 
 
 function SingleProduct() {
+
+ 
+
   const { productId } = useParams();
   const [product, setProduct] = useState({});
   const getProducts = async () => {
@@ -29,6 +32,50 @@ function SingleProduct() {
   useEffect(() => {
     getProducts();
   }, []);
+
+  const itemName = product.name;
+  const itemPrice = product.price;
+  const [quantity, setQuantity] = useState(1);
+  const [finalAmount, setFinalAmount] = useState(itemPrice * quantity);
+
+  const decrement = () => {
+      if (quantity > 1) {
+          setQuantity(quantity - 1);
+          setFinalAmount(finalAmount - itemPrice);
+      }
+  };
+
+  const increment = () => {
+      setQuantity(quantity + 1);
+      setFinalAmount(finalAmount + itemPrice);
+  };
+
+  const checkout = async () => {
+      try {
+          const res = await fetch('http://localhost:3000/checkout', {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              mode: "cors",
+              body: JSON.stringify({
+                  items: [
+                      {
+                          id: 1,
+                          quantity: quantity,
+                          price: itemPrice,
+                          name: itemName
+                      }
+                  ]
+              })
+          });
+          const data = await res.json();
+          window.location = data.url;
+
+      } catch (err) {
+          console.log(err);
+      }
+  };
 
   return (
     <>
@@ -112,9 +159,11 @@ function SingleProduct() {
                               <p className="text-[20px] text-green-600 pt-4">In Stock</p>
                               <p>ships from Amazon</p>
                               <p>Sold by Someone</p>
-                              <p>Quantity 1</p>
+                              <button onClick={decrement}>-</button>
+                              <p>{quantity}</p>
+                              <button onClick={increment}>+</button>
                               <button className="p-3 bg-black text-white rounded-3xl">Add to Cart</button>
-                              <button className="p-3 bg-black text-white rounded-3xl">Buy Now</button>
+                              <button className="p-3 bg-black text-white rounded-3xl" onClick={checkout}>Buy Now</button>
                     </div>
           </div>
         </div>
