@@ -14,7 +14,11 @@ const BuyerSignUp = () => {
         <div className="w-[80vw] flex justify-between p-3 bg-white rounded-2xl">
           <img src={img} alt="" className="w-[40rem]" />
           <div className="auth w-[50%] flex justify-center items-center">
-            {isLogin ? <Login isLogin={isLogin} setIsLogin={setIsLogin}/> : <Register isLogin={isLogin} setIsLogin={setIsLogin}/>}
+            {isLogin ? (
+              <Login isLogin={isLogin} setIsLogin={setIsLogin} />
+            ) : (
+              <Register isLogin={isLogin} setIsLogin={setIsLogin} />
+            )}
           </div>
         </div>
       </div>
@@ -34,10 +38,13 @@ const Login = ({ isLogin, setIsLogin }) => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("https://lcm-backend.onrender.com/loginbuyer", {
-        username,
-        password,
-      });
+      const result = await axios.post(
+        "https://lcm-backend.onrender.com/loginbuyer",
+        {
+          username,
+          password,
+        }
+      );
 
       setCookies("access_token", result.data.token);
       window.localStorage.setItem("userID", result.data.userID);
@@ -57,7 +64,9 @@ const Login = ({ isLogin, setIsLogin }) => {
         onSubmit={handleSubmit}
         className="flex flex-col gap-10 w-[100%] items-center"
       >
-        <h2 className="text-black text-center text-[2rem]">Login as a Buyer </h2>
+        <h2 className="text-black text-center text-[2rem]">
+          Login as a Buyer{" "}
+        </h2>
         <div className="form-group flex gap-2 justify-center w-[100%]">
           <input
             type="text"
@@ -78,7 +87,10 @@ const Login = ({ isLogin, setIsLogin }) => {
             placeholder="Password"
           />
         </div>
-        <button type="submit" className='bg-black w-[50%] p-3 rounded-3xl hover:bg-slate-700 text-white'>
+        <button
+          type="submit"
+          className="bg-black w-[50%] p-3 rounded-3xl hover:bg-slate-700 text-white"
+        >
           Login
         </button>
         <p className="text-black">
@@ -147,7 +159,12 @@ const Register = ({ isLogin, setIsLogin }) => {
             placeholder="Password"
           />
         </div>
-        <button type="submit" className='bg-black w-[50%] p-3 rounded-3xl hover:bg-slate-700 text-white'>Register</button>
+        <button
+          type="submit"
+          className="bg-black w-[50%] p-3 rounded-3xl hover:bg-slate-700 text-white"
+        >
+          Register
+        </button>
         {!isLogin && (
           <p className="text-black">
             Already have account?{" "}

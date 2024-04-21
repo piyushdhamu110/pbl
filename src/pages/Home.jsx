@@ -11,7 +11,9 @@ const Home = () => {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get("https://lcm-backend.onrender.com/products");
+      const response = await axios.get(
+        "https://lcm-backend.onrender.com/products"
+      );
       console.log(response.data.slice(0, 5));
       setProducts(response.data.slice(0, 9));
     } catch (error) {
@@ -74,11 +76,11 @@ const Home = () => {
           </div>
         </div>
         {/* Display GetProductsByLocation component */}
-        
+
         <div className="App fixed right-3">
           {/* Button to toggle chatbot visibility */}
           <button onClick={() => setShowChatbot(!showChatbot)}>
-            <TbMessageChatbot className="text-[4rem] text-orange-400"/>
+            <TbMessageChatbot className="text-[4rem] text-orange-400" />
           </button>
 
           {/* Conditionally render the chatbot based on state */}

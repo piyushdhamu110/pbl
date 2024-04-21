@@ -4,7 +4,6 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
-
 const SellerSignUp = () => {
   const [isLogin, setIsLogin] = useState(true);
   return (
@@ -38,10 +37,13 @@ const Login = ({ isLogin, setIsLogin }) => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("https://lcm-backend.onrender.com/loginseller", {
-        username,
-        password,
-      });
+      const result = await axios.post(
+        "https://lcm-backend.onrender.com/loginseller",
+        {
+          username,
+          password,
+        }
+      );
 
       setCookies("access_token", result.data.token);
       window.localStorage.setItem("userID", result.data.userID);

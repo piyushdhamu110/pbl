@@ -18,9 +18,9 @@ const Footer=() =>{
         </div>
         <div className='w-[34%] flex flex-col gap-3 items-center'>
           <p className='text-[20px] font-semibold'>Quick Links</p>
-          <p>Contacts</p>
-          <p>SignUp</p>
-          <p>Products</p>
+          <p className=' cursor-pointer '>Contacts</p>
+          <p className=' cursor-pointer '>SignUp</p>
+          <p className=' cursor-pointer '>Products</p>
         </div>
       </div>
     </footer>

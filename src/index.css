@@ -4,11 +4,11 @@
 
 .active {
   text-decoration: underline;
-} 
-*{
+}
+* {
   font-family: poppins;
 }
 
-body{
+body {
   background-color: rgb(234, 233, 233);
 }

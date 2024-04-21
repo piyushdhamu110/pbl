@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const PreviewProduct=() =>{
+const PreviewProduct = () => {
   return (
     <div>
-      <h2 className='text-black'>PreviewProduct</h2>
+      <h2 className="text-black">PreviewProduct</h2>
     </div>
-  )
-}
+  );
+};
 
 export default PreviewProduct;

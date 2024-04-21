@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [show, setShow] = useState(false);      
+  const [show, setShow] = useState(false);
   const [cookies, setCookies] = useCookies(["access_token"]);
   const navigate = useNavigate();
 
@@ -18,24 +18,35 @@ const Navbar = () => {
     <>
       <nav className="fixed w-full z-20 top-0 start-0 p-4 flex justify-center">
         <div className="w-[80%] bg-white  rounded-[30rem] p-3 px-5 flex items-center justify-between lg:w-[100%]">
-        <img src={logo} alt="" className="w-[4rem]" />
+          <img src={logo} alt="" className="w-[4rem]" />
           <div>
-          <ul className="flex gap-10 md:gap-4 tb:hidden">
+            <ul className="flex gap-10 md:gap-4 tb:hidden">
               <NavLink to="/" className="text-black text-[20px] md:text-[16px]">
                 Home
               </NavLink>
-              <NavLink to="/contact" className="text-black text-[20px] md:text-[16px]">
+              <NavLink
+                to="/contact"
+                className="text-black text-[20px] md:text-[16px]"
+              >
                 Contact
               </NavLink>
+
               {/* <NavLink to="about" className="text-black text-[20px] md:text-[16px]">
                 About
               </NavLink> */}
+              
               {!cookies.access_token ? (
-                <NavLink to="/signup" className="text-black text-[20px] md:text-[16px]">
+                <NavLink
+                  to="/signup"
+                  className="text-black text-[20px] md:text-[16px]"
+                >
                   Sign Up
                 </NavLink>
               ) : (
-                <button onClick={logout} className="text-black text-[20px] md:text-[16px]">
+                <button
+                  onClick={logout}
+                  className="text-black text-[20px] md:text-[16px]"
+                >
                   Logout
                 </button>
               )}
@@ -75,9 +86,9 @@ const Navbar = () => {
 
 export default Navbar;
 
-
-{/*  */}
-{/*  */}
-
-
-          
+{
+  /*  */
+}
+{
+  /*  */
+}
